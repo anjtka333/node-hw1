@@ -28,6 +28,7 @@ function removeContact(contactId) {
       const contacts = JSON.parse(data);
       const newContacts = contacts.filter((item) => item.id !== id);
       fs.writeFile(contactsPath, JSON.stringify(newContacts));
+      console.log(data);
     })
     .catch((err) => console.log(err.message));
 }
